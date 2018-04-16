@@ -1,12 +1,35 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Enviar</ion-title>    
+    <ion-buttons left>
+      <button ion-button (click)="cerrar_modal()">Cerrar</button>
+    </ion-buttons>
+    <ion-title>Enviar</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Título</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <img src="https://mott.pe/noticias/wp-content/uploads/2018/01/Portada-Beatles.jpg">
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button block icon-left><ion-icon name="photos"></ion-icon>Seleccionar</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block icon-left><ion-icon name="camera"></ion-icon>Camara</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
