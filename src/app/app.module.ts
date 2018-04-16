@@ -4,6 +4,13 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+//Pipes
+import { PipesModule } from '../pipes/pipes.module';
+
+//Plugins
+import { Camera } from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
+
 //firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
@@ -33,7 +40,8 @@ import { SubirPage } from '../pages/subir/subir';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,6 +53,8 @@ import { SubirPage } from '../pages/subir/subir';
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
+    Camera,
+    ImagePicker,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
