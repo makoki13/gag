@@ -7,11 +7,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <img src="https://mott.pe/noticias/wp-content/uploads/2018/01/Portada-Beatles.jpg">
+  <ion-card *ngFor="let post of posts | async">
+    <img [src]="post.img">
     <ion-card-content>
       <ion-card-title>
-        POST 1
+        {{ post.titulo }}
       </ion-card-title>
     </ion-card-content>
 
