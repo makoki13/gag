@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let post of posts | async">
+  <ion-card *ngFor="let post of _cap.imagenes">
     <img [src]="post.img">
     <ion-card-content>
       <ion-card-title>
@@ -28,4 +28,8 @@
   <ion-fab bottom right>
     <button ion-fab color="danger" (click)="mostrar_modal()"><ion-icon name="add"></ion-icon></button>    
   </ion-fab>
+
+  <ion-infinite-scroll [enabled]="hayMas" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
