@@ -4,7 +4,12 @@
     <ion-buttons left>
       <button ion-button (click)="cerrar_modal()">Cerrar</button>
     </ion-buttons>
+
     <ion-title>{{ titulo | placeHolder:'Crear nuevo post' }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button [disabled]=" titulo.length <= 1 || imagePreview.length <= 1 " (click)="crear_post()">Crear post</button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
