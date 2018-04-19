@@ -85,5 +85,6 @@
     <plugin name="com.synconset.imagepicker" spec="~2.1.10">
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="your usage message" />
     </plugin>
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.3.2" />
     <engine name="android" spec="7.0.0" />
 </widget>

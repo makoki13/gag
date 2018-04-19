@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 import { SubirPage } from '../subir/subir';
 
-//import { AngularFireDatabase } from 'angularfire2/database';
-//import { Observable } from 'rxjs/Observable';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 import { CargaArchivoProvider } from '../../providers/carga-archivo/carga-archivo';
 
@@ -16,7 +15,7 @@ export class HomePage {
   hayMas: boolean = true;
   //posts: Observable<any[]>;
 
-  constructor(private modalCtrl: ModalController, private _cap: CargaArchivoProvider) {
+  constructor(private modalCtrl: ModalController, private _cap: CargaArchivoProvider, private socialSharing: SocialSharing) {
     //this.posts = afDB.list('post').valueChanges();
   }
 
@@ -33,6 +32,15 @@ export class HomePage {
         this.hayMas = hayMas;
         infiniteScroll.complete();
       });    
+  }
+
+  compartir( post: any) {
+    this.socialSharing.shareViaFacebook(post.titulo, post.img, post.img )
+      .then(() => {
+      // Success!
+    }).catch(() => {
+      // Error!
+    });
   }
 
 }
